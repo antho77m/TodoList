@@ -1,0 +1,52 @@
+$background:#939597;
+$background2:#97999B;
+
+body{
+    background-color: $background2;
+    margin: 0;
+}
+
+
+.header{ //corresponds au composant Header
+    $header_selection_hover : #A89723;
+    $header: #FFEB69;
+    $header_selection: #F5DF4D;
+    
+
+    background-color: $header;
+
+    h1{
+        color: black;
+        font-size: 2em;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        
+        div{
+            background-color: $header_selection;
+            width: 40%;
+            text-align: center;
+            margin: 0.5em;
+            border: 1px solid black;
+            color: black;
+            border-radius: 0.5em;
+
+
+            &:hover{
+                background-color: $header_selection_hover;
+            }
+            a:visited{
+                color: black;
+            }
+            
+        }
+    }
+    
+}
