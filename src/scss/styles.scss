@@ -29,9 +29,9 @@ body{
         display: flex;
         justify-content: space-around;
         
-        div{
+        .linker{
             background-color: $header_selection;
-            width: 40%;
+            width: 25%;
             text-align: center;
             margin: 0.5em;
             border: 1px solid black;

@@ -19,19 +19,19 @@ body {
   display: flex;
   justify-content: space-around;
 }
-.header nav div {
+.header nav .linker {
   background-color: #F5DF4D;
-  width: 40%;
+  width: 25%;
   text-align: center;
   margin: 0.5em;
   border: 1px solid black;
   color: black;
   border-radius: 0.5em;
 }
-.header nav div:hover {
+.header nav .linker:hover {
   background-color: #A89723;
 }
-.header nav div a:visited {
+.header nav .linker a:visited {
   color: black;
 }
 
