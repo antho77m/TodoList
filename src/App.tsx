@@ -14,6 +14,7 @@ function App() {
       todoList.push(todo)
       setTodoList(todoList)
     }
+    return true
   }
   return (
     <div className="App">
@@ -21,7 +22,9 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Welcome/>}/>
-        <Route path="/list" element={<TodoList todoList={todoList} />}/>
+        <Route path="/list" element={<TodoList todoList={todoList} todoListUpdate={(todos)=>{
+          setTodoList(todos)
+        }} />}/>
         <Route path='/add' element={<TodoAdder todoAdd={addTodo}/>}/>
       </Routes>
 
