@@ -1,4 +1,5 @@
 import React from "react"
+import corbeille from "../res/poubelle.png"
 
 export function TodoList(props:{todoList:Todo[]|undefined,todoListUpdate:(todo:Todo[])=>void}){
     
@@ -18,6 +19,9 @@ function HeaderTodoList(){
     </div>
     
 }
+
+
+
 function ListFill(props:{todoList:Todo[]|undefined,todoListUpdate:(todo:Todo[])=>void}){
     return <div className="list">
         {props.todoList?.map((val,i)=>{
@@ -29,9 +33,6 @@ function ListFill(props:{todoList:Todo[]|undefined,todoListUpdate:(todo:Todo[])=
             })}
     </div>
 }
-
-
-
 function EmptyList() {
     return <div>votre liste est vide</div>
     
@@ -46,52 +47,14 @@ function TodoDisplayer(props:{todo:Todo,todoCheck:(todo:Todo)=>void}){
         </div>
         
         <div className="todo_name">{props.todo.name}</div>
-        <div className="todo_description">{props.todo.description}</div>
-
-
-    </div>
-}
-
-export function TodoAdder(props:{todoAdd:(todo:Todo)=>boolean}){
-
-    
-    let [result,setResult] = React.useState<boolean>(false)
-    let [newTodo,setNewTodo] = React.useState<Todo>({name:"",description:"",checked:false})
-    let todoName:string = ""
-    let todoDescription:string = ""
-    return <div>
-        <div className="name">
-            <label htmlFor="todo_name">nom de la tache:</label>
-            <input type="text" name="todo_name" defaultValue={todoName} id="todo_name" onChange={(e)=>{todoName=e.target.value}} />
+        <div className="trash_containe">
+            <div className="trash">
+                <img src={corbeille} alt="corbeille" />
+            </div>
         </div>
 
-        <div className="description">
-            <label htmlFor="todo_description">description de la tache:</label>
-            <input type="text" id="todo_description" defaultValue={todoDescription} name="todo_description" onChange={(e)=>{todoDescription=e.target.value}} />
-        </div>
-        
-        <input type="submit" value="ajouter" onClick={()=>{
-            newTodo.name = todoName
-            newTodo.description = todoDescription
-            setNewTodo(newTodo)
-            if(props.todoAdd(newTodo)){
-                setResult(true)
-            }else{
-                setResult(false)
-            }
-            todoName = ""
-            todoDescription = ""
-        }}  />
-        {result && <Result name={newTodo.name}/>}
+
     </div>
-
-}
-
-function Result(props:{name:string}){
-    return <div>
-        la tache {props.name} a bien été ajouté
-    </div>
-
 }
 
 export interface Todo{

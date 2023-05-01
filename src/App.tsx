@@ -1,7 +1,8 @@
 import React, { Component, useState } from 'react';
 import { Route, Routes, To } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Todo, TodoAdder, TodoList } from './components/TodoList';
+import { TodoAdder } from './components/TodoAdder';
+import { Todo, TodoList } from './components/TodoList';
 import {Welcome} from './components/Welcome'
 import './css/styles.css';
 

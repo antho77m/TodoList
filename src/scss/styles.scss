@@ -1,11 +1,11 @@
 $background:#939597;
-$background2:#97999B;
+$background2:#b0b3b5;
 $header_selection_hover : #A89723;
 $header: #FFEB69;
 $header_selection: #F5DF4D;
 
 body{
-    background-color: $background2;
+    background-color: $background;
     margin: 0;
 }
 
@@ -50,27 +50,56 @@ body{
         color: black;
     }   
 }
-    
-    
+
+
+.todo_list{
+    width: 80%;
+    margin: auto;
+}
+
 .todo_list h3{
-    margin: 0;
     margin-top: 1em;
     text-align: center;
     color: black;
     font-size: 1.5em;
 }
 
+.todo_list .list{
+    border: $header_selection 1px solid;
+    background-color: $background2;
+    border-radius: 0.5em;
+}
 
 
 .todo{
     margin: auto;
-    width: 75%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+
+    border-bottom: 1px solid $header_selection;
+
+    &:nth-last-child(1){
+        border-bottom: none;
+    }
 
     div{
         padding: 1em;
     }
+
+}
+
+.trash{ 
+
+
+    
+    img{
+        margin: auto;
+        height: 1em;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+
 
 }

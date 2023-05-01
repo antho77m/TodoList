@@ -1,5 +1,5 @@
 body {
-  background-color: #97999B;
+  background-color: #939597;
   margin: 0;
 }
 
@@ -37,23 +37,44 @@ body {
   color: black;
 }
 
+.todo_list {
+  width: 80%;
+  margin: auto;
+}
+
 .todo_list h3 {
-  margin: 0;
   margin-top: 1em;
   text-align: center;
   color: black;
   font-size: 1.5em;
 }
 
+.todo_list .list {
+  border: #F5DF4D 1px solid;
+  background-color: #b0b3b5;
+  border-radius: 0.5em;
+}
+
 .todo {
   margin: auto;
-  width: 75%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  border-bottom: 1px solid #F5DF4D;
+}
+.todo:nth-last-child(1) {
+  border-bottom: none;
 }
 .todo div {
   padding: 1em;
+}
+
+.trash img {
+  margin: auto;
+  height: 1em;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
