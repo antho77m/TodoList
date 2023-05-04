@@ -1,11 +1,11 @@
-$background:#939597;
-$background2:#b0b3b5;
-$header_selection_hover : #A89723;
-$header: #FFEB69;
-$header_selection: #F5DF4D;
+$grey1:#939597;
+$grey2:#b0b3b5;
+$yellow1: #FFEB69;
+$yellow2: #F5DF4D;
+$yellow3 : #A89723;
 
 body{
-    background-color: $background;
+    background-color: $grey1;
     margin: 0;
 }
 
@@ -13,7 +13,7 @@ body{
 .header{ //corresponds au composant Header
     
 
-    background-color: $header;
+    background-color: $yellow1;
 
     h1{
         color: black;
@@ -35,7 +35,7 @@ body{
 }
 
 .linker{
-    background-color: $header_selection;
+    background-color: $yellow2;
     width: 25%;
     text-align: center;
     margin: 0.5em;
@@ -44,11 +44,34 @@ body{
     border-radius: 0.5em;
 
     &:hover{
-        background-color: $header_selection_hover;
+        background-color: $yellow3;
     }
     a:visited{
         color: black;
     }   
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+    .content{
+        width: 40%;
+        min-width: 500px;
+
+        border: $yellow2 solid 1px;
+        background-color: $grey2;
+        text-align: center;
+        color: black;
+        font-size: 1.1em;
+    }
+}
+.welcome ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -65,36 +88,41 @@ body{
 }
 
 .todo_list .list{
-    border: $header_selection 1px solid;
-    background-color: $background2;
+    border: $yellow2 1px solid;
+    background-color: $grey2;
     border-radius: 0.5em;
+    
 }
 
 
 .todo{
     margin: auto;
-    margin: auto;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
 
-    border-bottom: 1px solid $header_selection;
+    border-bottom: 1px solid $yellow2;
 
     &:nth-last-child(1){
         border-bottom: none;
     }
 
     div{
-        padding: 1em;
+        padding: 0.5em;
     }
 
 }
 
+.trash_container{
+    display: flex;
+    justify-content: end;
+
+}
+
 .trash{ 
+    padding: 0;
 
-
-    
     img{
-        margin: auto;
+        margin: 0;
         height: 1em;
         cursor: pointer;
         padding: 0;
@@ -102,4 +130,73 @@ body{
     }
 
 
+}
+
+.adder{
+    height: 80vh;
+    width: 80%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center; 
+    
+}
+.adder .container{
+    border: $yellow2 solid 1px;
+    background-color: $grey2;
+    width: 50%;
+    min-width: 500px;
+    height: 40%;
+    text-align: center;
+
+}
+.form_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    height: 100%;
+}
+.user_inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+}
+.name,.description{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em;
+    label{
+        margin-bottom: 0.5em;
+        text-align: center;
+    }
+    input{
+        min-width: 200px;
+        border-radius: 0.5em;
+        
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+.submit input{
+    width: 50%;
+    min-width: 200px;
+    height: 2em;
+    border-radius: 0.5em;
+
+    border: black solid 1px;
+    background-color: $yellow2;
+    cursor: pointer;
+    &:hover{
+        background-color: $yellow3;
+    }
 }

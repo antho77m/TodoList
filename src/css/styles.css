@@ -37,6 +37,28 @@ body {
   color: black;
 }
 
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.welcome .content {
+  width: 40%;
+  min-width: 500px;
+  border: #F5DF4D solid 1px;
+  background-color: #b0b3b5;
+  text-align: center;
+  color: black;
+  font-size: 1.1em;
+}
+
+.welcome ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 .todo_list {
   width: 80%;
   margin: auto;
@@ -57,7 +79,6 @@ body {
 
 .todo {
   margin: auto;
-  margin: auto;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   border-bottom: 1px solid #F5DF4D;
@@ -66,15 +87,91 @@ body {
   border-bottom: none;
 }
 .todo div {
-  padding: 1em;
+  padding: 0.5em;
 }
 
+.trash_container {
+  display: flex;
+  justify-content: end;
+}
+
+.trash {
+  padding: 0;
+}
 .trash img {
-  margin: auto;
+  margin: 0;
   height: 1em;
   cursor: pointer;
   padding: 0;
   margin: 0;
+}
+
+.adder {
+  height: 80vh;
+  width: 80%;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.adder .container {
+  border: #F5DF4D solid 1px;
+  background-color: #b0b3b5;
+  width: 50%;
+  min-width: 500px;
+  height: 40%;
+  text-align: center;
+}
+
+.form_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.user_inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
+
+.name, .description {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em;
+}
+.name label, .description label {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+.name input, .description input {
+  min-width: 200px;
+  border-radius: 0.5em;
+}
+.name input:focus, .description input:focus {
+  outline: none;
+}
+
+.submit input {
+  width: 50%;
+  min-width: 200px;
+  height: 2em;
+  border-radius: 0.5em;
+  border: black solid 1px;
+  background-color: #F5DF4D;
+  cursor: pointer;
+}
+.submit input:hover {
+  background-color: #A89723;
 }
 
 /*# sourceMappingURL=styles.css.map */

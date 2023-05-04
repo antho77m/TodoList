@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 
 export function Welcome() {
-    return <div className="Welcome">
+    return <div className="welcome">
+        <div className="content">
         <h1>Bienvenue dans l'application web de TodoList !</h1>
-        Réaliser par Antho
-        <Link to={"/TodoList"}>Accéder a l'application de TodoList</Link>
+        <p>
+            Petit projet personnel réaliser par <strong>Antho77m</strong> <br />
+            Technologies utilisées: <br />
+            React & SCSS    
+        
+        </p>
+
+        </div>
     </div>
     
 }

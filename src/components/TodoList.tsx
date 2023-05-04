@@ -40,14 +40,14 @@ function EmptyList() {
 
 function TodoDisplayer(props:{todo:Todo,todoCheck:(todo:Todo)=>void}){
     return <div className="todo">
-        <div className="todoCheck">
+        <div className="todo_check">
             
             <input type="checkbox" name="" id="" defaultChecked={props.todo.checked} onChange={()=>{props.todoCheck(props.todo)}} /> 
 
         </div>
         
         <div className="todo_name">{props.todo.name}</div>
-        <div className="trash_containe">
+        <div className="trash_container">
             <div className="trash">
                 <img src={corbeille} alt="corbeille" />
             </div>
