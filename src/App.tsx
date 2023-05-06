@@ -9,6 +9,20 @@ import './css/styles.css';
 function App() {
   const [todoList,setTodoList] = useState<Todo[]|undefined>()
   let addTodo = (todo:Todo)=>{  // fonction réalisant l'ajout d'une tache a la liste
+    console.log(todo)
+    if(todo.name===""){
+      return false
+    }
+    //vérifie si il y a déjà une todo avec le meme nom
+    if(todoList!==undefined){
+      for(let i=0;i<todoList.length;i++){
+        if(todoList[i].name===todo.name){
+          return false
+        }
+      }
+    }
+
+
     if(todoList===undefined){
       setTodoList([todo])
     }else{

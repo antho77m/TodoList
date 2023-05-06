@@ -4,10 +4,8 @@ import { Todo } from "./TodoList"
 export function TodoAdder(props:{todoAdd:(todo:Todo)=>boolean}){
 
     
-    let [result,setResult] = React.useState<boolean>(false)
+    let [result,setResult] = React.useState<boolean|undefined>(undefined)
     let [newTodo,setNewTodo] = React.useState<Todo>({name:"",description:"",checked:false})
-    let todoName:string = ""
-    let todoDescription:string = ""
     return <div className="adder">
         <div className="container">
         <h3>Ajouter une tache</h3>
@@ -16,27 +14,19 @@ export function TodoAdder(props:{todoAdd:(todo:Todo)=>boolean}){
                     <div className="user_inputs">
                         <div className="name">
                             <label htmlFor="todo_name">nom de la tache:</label>
-                            <input type="text" name="todo_name" defaultValue={todoName} id="todo_name" autoComplete='off' onChange={(e)=>{todoName=e.target.value}} />
+                            <input type="text" name="todo_name" defaultValue={newTodo.name} id="todo_name" autoComplete='off' onChange={(e)=>{newTodo.name=e.target.value}} />
                         </div>
                         <div className="description">
                             <label htmlFor="todo_description">description de la tache:</label>
-                            <input type="text" id="todo_description" defaultValue={todoDescription} autoComplete='off' name="todo_description" onChange={(e)=>{todoDescription=e.target.value}} />
+                            <input type="text" id="todo_description" defaultValue={newTodo.description} autoComplete='off' name="todo_description" onChange={(e)=>{newTodo.description=e.target.value}} />
                         </div>
                     </div>
                     <div className="submit">
                         <input type="submit" value="ajouter" onClick={()=>{
-                            newTodo.name = todoName
-                            newTodo.description = todoDescription
                             setNewTodo(newTodo)
-                            if(props.todoAdd(newTodo)){
-                                setResult(true)
-                            }else{
-                                setResult(false)
-                            }
-                            todoName = ""
-                            todoDescription = ""
+                            setResult(props.todoAdd(newTodo))
                         }}  />
-                        {result && <Result name={newTodo.name}/>}
+                        <Result name={newTodo.name} good={result}/>
                     </div>
                 </div>
             </div>
@@ -45,9 +35,17 @@ export function TodoAdder(props:{todoAdd:(todo:Todo)=>boolean}){
 
 }
 
-function Result(props:{name:string}){
-    return <div>
-        la tache {props.name} a bien été ajouté
+function Result(props:{name:string,good:boolean|undefined}){
+    if (props.good===undefined){
+        return <React.Fragment></React.Fragment>
+    }
+    const color = props.good?"green":"red"
+
+    const text = props.good?" a bien été ajouté":"n'a pas été ajouté"
+    
+
+    return <div className="result" style={{"color":color}}>
+        la tache {props.name} {text}
     </div>
 
 }

@@ -5,7 +5,7 @@ export function Welcome() {
         <div className="content">
         <h1>Bienvenue dans l'application web de TodoList !</h1>
         <p>
-            Petit projet personnel réaliser par <strong>Antho77m</strong> <br />
+            Petit projet personnel réaliser par <strong className="author">Antho77m</strong> <br />
             Technologies utilisées: <br />
             React & SCSS    
         
